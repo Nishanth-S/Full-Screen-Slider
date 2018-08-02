@@ -1,0 +1,161 @@
+/* General Styles */
+html, body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.wrapper h1{
+    font-size: 4rem;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    text-transform: uppercase;
+    transform: translatex(-50%);
+    color: #fff;
+}
+
+.button{
+    font-size: 1rem;
+    display:block;
+    position: absolute;
+    top:40%;
+    left: 50%;
+    width: 15rem;
+    color: #fff;
+    border: 3px solid #fff;
+    padding:1.3rem;
+    text-align: center;
+    text-decoration: none;
+    transform: translatex(-50%);
+    transition: background-color 500ms;
+
+}
+
+.wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #333;
+}
+
+.question-nav{
+    /* display: inline; */
+
+    position: absolute;
+    width: 90%;
+    margin: 0 5%;
+    background-color: #fff;
+    text-align: center;
+    height: 20px;
+    z-index: 30;
+    padding: 10px 0;
+
+}
+
+.question-nav h1{
+    padding: 0;
+    color: #000;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Splitting the screens */
+.split{
+    position: absolute;
+    width:50%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow:10px 10px goldenrod;
+}
+/* Styling the left split screen */
+.split.left{
+    left:0;
+    background: url(img/got1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.split.left:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: rgba(75,0,130,0.5);
+}
+
+.split.left .button:hover{
+    background-color:rgba(75,0,130,0.5);
+    border:rgba(75,0,130,0.5);
+}
+
+/* Styling the right split screen */
+.split.right{
+    right: 0;
+    background: url(img/friends.jpg) center center no-repeat;
+    background-size:cover;
+}
+
+.split.right:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.split.right .button:hover{
+    background-color:rgba(0, 0,0, 0.7);
+    border: rgba(0, 0,0, 0.7);
+}
+
+/* Width Strectching */
+.hover-left .left{
+    width: 75%;
+}
+
+.hover-left .right{
+    width: 25%;
+}
+
+.hover-left .right:before{
+    z-index: 10;
+}
+
+
+.hover-right .right{
+    width: 75%;
+}
+
+.hover-right .left{
+    width: 25%;
+}
+
+.hover-right .left:before{
+    z-index: 2;
+}
+
+/* Transition for Width Extension on Hovering */
+.split.left,.split.right,.split.left:before,.split.right:before{
+    transition: 1s all ease-in-out;
+}
+
+@media(max-width:700px){
+    .wrapper h1{
+        font-size: 2rem;
+    }
+
+    .button{
+        width: 8rem;
+    }
+}
+
+@media(max-height:600px){
+    .button{
+        top:70%;
+    }
+}
